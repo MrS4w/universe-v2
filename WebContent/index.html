@@ -9,6 +9,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style type="text/css">
+  .ftr{
+    position:absolute;
+    bottom:0;
+    width:100%;
+  } 
+</style>
 </head>
 
 <body background="img/back.jpg">
@@ -25,15 +32,15 @@
     </a></li>
   </ul>
 </div>
-  <!-- Mobile menu -->
+<!-- Mobile menu -->
 
-  <ul id="nav-mobile" class="side-nav teal">
-        <li><a><i class="material-icons left">link</i>Links:</a></li>
-        <li><a href="https://github.com/MrS4w/universe" target="blank"><img src="img/Octocat.png" width="15px">Código fonte</a></li>
-          <li><a href="http://materializecss.com" target="blank"><img src="img/m.png" width="17.5px" height="15px">Materialize</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
+<ul id="nav-mobile" class="side-nav teal">
+  <li><a><i class="material-icons left">link</i>Links:</a></li>
+  <li><a href="https://github.com/MrS4w/universe" target="blank"><img src="img/Octocat.png" width="15px">Código fonte</a></li>
+  <li><a href="http://materializecss.com" target="blank"><img src="img/m.png" width="17.5px" height="15px">Materialize</a></li>
+</ul>
+<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+</div>
 </nav>
 
 
@@ -50,14 +57,13 @@
     <div class="row center">
       <a type="button" class="blue-grey darken-4 waves-effect waves-light btn">Listar <i class="material-icons left">format_list_bulleted</i></a>
     </div>
-    <br><br> <br><br> <br>
   </div>
 </div>
 
 
 
 <!-- Footer -->
-<footer class="page-footer blue-grey darken-4">
+<footer class="page-footer ftr blue-grey darken-4">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
@@ -73,7 +79,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-copyright">
+  <div class=" ftr footer-copyright">
     <div class="container">
       &copy; 2018 - Victor Silva and Patrick Brass
     </div>
