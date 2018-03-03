@@ -40,25 +40,31 @@
 
 
 </nav>
+<br><br>
 
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
-    <br><br>
-    <!-- code -->
-<h2 class="header center white-text">Inserir estrela:</h2>
-<div class="row center">
-      <a type="button" href="star.html" name="inserir" class="blue-grey darken-4 waves-effect waves-light btn"><i class="material-icons left">add_circle</i>Estrela</a>
-      <a type="button" href="blackhole.html" name="inserir" class="blue-grey darken-4 waves-effect waves-light btn"><i class="material-icons left">add_circle</i>Buraco negro</a>
+    <div class="row">
+      <!-- code -->
+      <h3 class="header center white-text">Inserir buraco negro:</h3>
+
+      <form class="white-text col s4 offset-s4" method="post" action="#">
+        Nome:<input type="text" name="nome" required>
+        Volume:<input type="number" name="volume" min="0" required>
+        Posição:<input type="text" name="posicao" required>
+        Velocidade/Rotação:<input type="number" name="vel" min="0" required>
+        <input type="submit" name="botao" class="blue-grey darken-4 waves-effect waves-light btn" value="Enviar">
+      </form>
+
     </div>
-<h2 class="header center white-text">Inserir galáxia:</h2>
-<div class="row center">
-      <a type="button" name="inserir" href="galaxy.html" class="blue-grey darken-4 waves-effect waves-light btn"><i class="material-icons left">add_circle</i>Galáxia</a>
-      <a type="button" name="inserir" href="system.html" class="blue-grey darken-4 waves-effect waves-light btn"><i class="material-icons left">add_circle</i>Sistema</a>
-    </div>
-    <!-- end code -->
-        <br><br> <br><br> <br>
   </div>
 </div>
+
+
+<!-- end code -->
+<br><br> <br>
+
+
 
 
 <!-- Footer -->
