@@ -7,12 +7,12 @@
       <h1 class="header center white-text">Bem vindo ao Universe!</h1>
       <h5 class="header center white-text">Se deseja inserir uma estrela ou uma galáxia clique abaixo:</h5>
       <div class="row center">
-        <a type="button" name="inserir" href="inserir.jsp" class="blue-grey darken-4 waves-effect waves-light btn">
+        <a type="button" name="inserir" href="http://localhost:8080/universe/inserir" class="blue-grey darken-4 waves-effect waves-light btn">
           <i class="material-icons left">add_circle_outline</i>Inserir</a>
       </div>
       <h5 class="header center white-text">Ou clique para listar os itens já existentes:</h5>
       <div class="row center">
-        <a type="button" href="listar.jsp" class="blue-grey darken-4 waves-effect waves-light btn">Listar
+        <a type="button" href="http://localhost:8080/universe/listar" class="blue-grey darken-4 waves-effect waves-light btn">Listar
           <i class="material-icons left">format_list_bulleted</i>
         </a>
       </div>
