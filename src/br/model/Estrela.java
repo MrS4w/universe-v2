@@ -1,9 +1,6 @@
-package model;
+package br.model;
 
 public abstract class Estrela {
-	public Estrela() {
-
-	}
 
 	protected String nome;
 	protected double volume;

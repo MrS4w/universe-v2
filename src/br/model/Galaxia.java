@@ -1,10 +1,7 @@
-package model;
+package br.model;
 
 public abstract class Galaxia {
-	public Galaxia() {
-
-	}
-
+	
 	protected String nome;
 	protected String posicao;
 	protected double dimensao;

@@ -1,4 +1,4 @@
-package model;
+package br.model;
 
 public class BuracosNegros extends Estrela {
 	private double velocidade;

@@ -1,4 +1,4 @@
-package model;
+package br.model;
 
 public class Galaxias extends Galaxia {
 	private int quantidade;

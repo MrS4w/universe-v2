@@ -1,4 +1,4 @@
-package model;
+package br.model;
 
 public class Estrelas extends Estrela {
 	private boolean visivel;
