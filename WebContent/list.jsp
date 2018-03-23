@@ -37,67 +37,67 @@
 			<td>Alfreds Futterkiste</td>
 			<td>Maria Anders</td>
 			<td>Germany</td>
-			<td><button class="coredit">
+			<td><a href="http://localhost:8080/universe/editar"><button class="coredit">
 					<i class="material-icons left">edit</i>
-				</button>
-				<button class="cordel">
+				</button></a>
+				<a href="http://localhost:8080/universe/excluir"><button class="cordel">
 					<i class="material-icons left">delete</i>
-				</button></td>
+				</button></a></td>
 		</tr>
 		<tr>
 			<td>Centro comercial Moctezuma</td>
 			<td>Francisco Chang</td>
 			<td>Mexico</td>
-			<td><button class="coredit">
-					<i class="material-icons left">edit</i>
-				</button>
-				<button class="cordel">
-					<i class="material-icons left">delete</i>
-				</button></td>
+			<td><a href="http://localhost:8080/universe/editar"><button class="coredit">
+				<i class="material-icons left">edit</i>
+			</button></a>
+			<a href="http://localhost:8080/universe/excluir"><button class="cordel">
+				<i class="material-icons left">delete</i>
+			</button></a></td>
 		</tr>
 		<tr>
 			<td>Ernst Handel</td>
 			<td>Roland Mendel</td>
 			<td>Austria</td>
-			<td><button class="coredit">
-					<i class="material-icons left">edit</i>
-				</button>
-				<button class="cordel">
-					<i class="material-icons left">delete</i>
-				</button></td>
+			<td><a href="http://localhost:8080/universe/editar"><button class="coredit">
+				<i class="material-icons left">edit</i>
+			</button></a>
+			<a href="http://localhost:8080/universe/excluir"><button class="cordel">
+				<i class="material-icons left">delete</i>
+			</button></a></td>
 		</tr>
 		<tr>
 			<td>Island Trading</td>
 			<td>Helen Bennett</td>
 			<td>UK</td>
-			<td><button class="coredit">
-					<i class="material-icons left">edit</i>
-				</button>
-				<button class="cordel">
-					<i class="material-icons left">delete</i>
-				</button></td>
+			<td><a href="http://localhost:8080/universe/editar"><button class="coredit">
+				<i class="material-icons left">edit</i>
+			</button></a>
+			<a href="http://localhost:8080/universe/excluir"><button class="cordel">
+				<i class="material-icons left">delete</i>
+			</button></a></td>
 		</tr>
 		<tr>
 			<td>Laughing Bacchus Winecellars</td>
 			<td>Yoshi Tannamuri</td>
 			<td>Canada</td>
-			<td><button class="coredit">
-					<i class="material-icons left">edit</i>
-				</button>
-				<button class="cordel">
-					<i class="material-icons left">delete</i>
-				</button></td>
+			<td><a href="http://localhost:8080/universe/editar"><button class="coredit">
+				<i class="material-icons left">edit</i>
+			</button></a>
+			<a href="http://localhost:8080/universe/excluir"><button class="cordel">
+				<i class="material-icons left">delete</i>
+			</button></a></td>
 		</tr>
 		<tr>
 			<td>Magazzini Alimentari Riuniti</td>
 			<td>Giovanni Rovelli</td>
 			<td>Italy</td>
-			<td><button class="coredit">
-					<i class="material-icons left">edit</i>
-				</button>
-				<button class="cordel">
-					<i class="material-icons left">delete</i>
-				</button></td>
+			<td><a href="http://localhost:8080/universe/editar"><button class="coredit">
+				<i class="material-icons left">edit</i>
+			</button></a>
+			<a href="http://localhost:8080/universe/excluir"><button class="cordel">
+				<i class="material-icons left">delete</i>
+			</button></a></td>
 		</tr>
 	</table>
 </div>
