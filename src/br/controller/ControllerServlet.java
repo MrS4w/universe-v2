@@ -30,7 +30,8 @@ public class ControllerServlet extends HttpServlet {
 			rd.forward(request, response);
 
 		} catch (Exception e) {
-			throw new ServletException("A lógica de negócios causou uma exceção: ", e);
+			RequestDispatcher rd = request.getRequestDispatcher("404.jsp");
+			rd.forward(request, response);
 
 		}
 

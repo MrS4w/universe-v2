@@ -12,7 +12,7 @@
       </div>
       <h5 class="header center white-text">Ou clique para listar os itens já existentes:</h5>
       <div class="row center">
-        <a type="button" href="http://localhost:8080/universe/listar" class="blue-grey darken-4 waves-effect waves-light btn">Listar
+        <a type="button" href="index?action=Listar" class="blue-grey darken-4 waves-effect waves-light btn">Listar
           <i class="material-icons left">format_list_bulleted</i>
         </a>
       </div>
