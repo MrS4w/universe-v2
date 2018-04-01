@@ -7,7 +7,7 @@
 <%
 	SistemasPlanetarios sp = (SistemasPlanetarios) request.getSession().getAttribute("sistemaencontrado");
 	if (sp == null) {
-		out.println("<h3 class='center white-text'>Não há galáxias com esse nome!</h3>");
+		out.println("<h3 class='center white-text'>Não há sistemas com esse nome!</h3>");
 	 %>
 <div class="header center white-text">
 <h7>Clique no botão abaixo para voltar para a listagem:</h7><br>

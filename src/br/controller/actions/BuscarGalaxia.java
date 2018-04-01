@@ -14,6 +14,9 @@ public class BuscarGalaxia implements Action {
 	public String run(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String buscag = request.getParameter("txtgalaxia");
 		ArrayList<Galaxias> gal = (ArrayList<Galaxias>) request.getSession().getAttribute("listagal");
+if(gal==null) {
+			
+		}else {
 		
 		int encontrado = 0;
 		for (int i = 0; i < gal.size(); i++) {
@@ -31,7 +34,7 @@ public class BuscarGalaxia implements Action {
 				request.getSession().setAttribute("galaxiaencontrada", g);
 			}
 		}
-		
+		}
 		return "encontrargalaxia.jsp";
 	}
 

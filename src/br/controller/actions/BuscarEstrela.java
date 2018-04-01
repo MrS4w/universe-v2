@@ -17,7 +17,10 @@ public class BuscarEstrela implements Action {
 		ArrayList<Estrelas> lista2 = (ArrayList<Estrelas>) request.getSession().getAttribute("lista");
 
 		
-	
+if(lista2==null) {
+			
+		}else {
+		
 			int encontrado = 0;
 			for (int i = 0; i < lista2.size(); i++) {
 				if (busca.equals(lista2.get(i).getNome())) {
@@ -34,7 +37,7 @@ public class BuscarEstrela implements Action {
 					request.getSession().setAttribute("estrelaencontrada", e);
 				}
 			}
-
+		}
 		return "encontrarestrela.jsp";
 	}
 

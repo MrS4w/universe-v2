@@ -15,7 +15,10 @@ public class BuscarSistema implements Action {
 		String buscasp = request.getParameter("txtsistema");
 		ArrayList<SistemasPlanetarios> sis = (ArrayList<SistemasPlanetarios>) request.getSession()
 				.getAttribute("listasp");
-
+if(sis==null) {
+			
+		}else {
+		
 		int encontrado = 0;
 		for (int i = 0; i < sis.size(); i++) {
 			if (buscasp.equals(sis.get(i).getNome())) {
@@ -30,7 +33,7 @@ public class BuscarSistema implements Action {
 				sp.setDimensao(dimen);
 				sp.setConstelacao(cons);
 				request.getSession().setAttribute("sistemaencontrado", sp);
-
+			}
 			}
 		}
 		return "encontrarsistema.jsp";

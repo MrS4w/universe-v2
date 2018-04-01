@@ -14,7 +14,10 @@ public class BuscarBN implements Action {
 	public String run(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String buscabn = request.getParameter("txtbn");
 		ArrayList<BuracosNegros> listabn2 = (ArrayList<BuracosNegros>) request.getSession().getAttribute("listabn");
-
+		if(listabn2==null) {
+			
+		}else {
+		
 		int encontrado = 0;
 		for (int i = 0; i < listabn2.size(); i++) {
 			if (buscabn.equals(listabn2.get(i).getNome())) {
@@ -29,6 +32,7 @@ public class BuscarBN implements Action {
 				bn.setPosicao(pos);
 				bn.setVelocidade(vel);
 				request.getSession().setAttribute("bnencontrado", bn);
+			}
 			}
 		}
 
