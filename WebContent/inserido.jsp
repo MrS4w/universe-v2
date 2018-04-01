@@ -5,7 +5,7 @@
 	<h1> <i class="large material-icons">check_circle</i> </h1>
 	<h3> Item inserido com sucesso! </h3>
 	<h7>Clique no botão abaixo para voltar para a página inicial:</h7><br>
-	<a type="button" href="index?action=Index" class="blue-grey darken-4 waves-effect waves-light btn"><i class="large material-icons">replay</i></a>
+	<a type="button" href="index?action=Index" class="blue-grey darken-4 waves-effect waves-light btn"><i class="large material-icons">home</i></a>
 </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br>

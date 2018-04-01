@@ -3,18 +3,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="header.html"%>
-<nav>
-    <div class="nav-wrapper">
-      <form>
-        <div class="black input-field">
-          <input id="search" type="search" placeholder="Pesquise por nome..." required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-          
-        </div>
-      </form>
-    </div>
-  </nav>
+
+<form method="post" action="index?action=BuscarEstrela">
+<div class="black white-text">
+          <input id="txtestrela" name="txtestrela" type="text" placeholder="Pesquise por nome..." required>
+            <button class="btn waves-effect brown darken-4" type="submit" name="action">Procurar
+    <i class="material-icons right">send</i>
+  </button>
+          </div>
+          </form>
+
 	<% 
 ArrayList<Estrelas> lista =(ArrayList<Estrelas>) request.getSession().getAttribute("lista");
 if(lista==null){
@@ -45,9 +43,12 @@ for(int i=0;i<lista.size();i++){
 	}else{
 		out.println("<td>Não visível</td>");
 	}
-	out.println("<td> <button class='blue darken-4' href='#'> <i class='material-icons left'>edit</i></button></td>");
-	out.println("<td> <button class='red accent-4' href='#'> <i class='material-icons left'>delete</i></button></td>");
+	out.println(
+			"<td> <a class='button blue darken-4' href='#'> <i class='blue darken-4 white-text material-icons left'>edit</i></a></td>");
+	out.println(
+			"<td> <a class='button red accent-4' href='#'> <i class='button red accent-4 white-text material-icons left'>delete</i></a></td>");
 	out.println("</tr>");
+
 }
 %>
 </table>
