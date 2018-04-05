@@ -12,8 +12,8 @@
           </div>
           </form>
 	<% 
-ArrayList<Galaxias> listagal =(ArrayList<Galaxias>) request.getSession().getAttribute("listagal");
-if(listagal==null){
+ArrayList<Galaxias> listag =(ArrayList<Galaxias>) request.getSession().getAttribute("listagal");
+if(listag==null || listag.isEmpty()){
 	out.println("<h1 class='header center white-text'>Não existem galáxias registradas!</h1>");
 }else{
 %>
@@ -31,20 +31,32 @@ td{width: 10%;}
 <th>Excluir</th>
 </tr>
 <% 
-for(int i=0;i<listagal.size();i++){
+for(int i=0;i<listag.size();i++){
 	out.println("<tr>");
-	out.println("<td>"+listagal.get(i).getNome()+"</td>");
-	out.println("<td>"+listagal.get(i).getPosicao()+"</td>");
-	out.println("<td>"+listagal.get(i).getDimensao()+"</td>");
-	out.println("<td>"+listagal.get(i).getQuantidade()+"</td>");
-	out.println(
-			"<td> <a class='button blue darken-4' href='#'> <i class='blue darken-4 white-text material-icons left'>edit</i></a></td>");
-	out.println(
-			"<td> <a class='button red accent-4' href='#'> <i class='button red accent-4 white-text material-icons left'>delete</i></a></td>");
-	out.println("</tr>");
-
-}
-%>
+	out.println("<td>"+listag.get(i).getNome()+"</td>");
+	out.println("<td>"+listag.get(i).getPosicao()+"</td>");
+	out.println("<td>"+listag.get(i).getDimensao()+"</td>");
+	out.println("<td>"+listag.get(i).getQuantidade()+"</td>");
+	
+	%>
+	<td>
+					<form method="post" action="index?action=EditarGalaxia">					
+						<button value="<%=listag.get(i).getId() %>" class="button blue darken-4" name="editar"  type="submit"> 
+							<i class='blue darken-4 white-text material-icons left'>edit</i>
+						</button>
+					</form>
+				</td>
+				<td>
+				<form method="post" action="index?action=ExcluirGalaxia">
+					<input type="hidden" name="id" value="<%=listag.get(i).getId() %>">
+					<button class="button red accent-4" value="<%=listag.get(i).getId() %>" name="deletar" type="submit">
+						<i class='button red accent-4 white-text material-icons left'>delete</i>
+					</button>
+				</form>
+			</td>
+		</tr>
+	<% }
+	%>
 </table>
 <%}%>
  <!-- Footer -->

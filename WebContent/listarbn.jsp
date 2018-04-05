@@ -12,41 +12,57 @@
           </div>
           </form>
 	<% 
-ArrayList<BuracosNegros> listabn =(ArrayList<BuracosNegros>) request.getSession().getAttribute("listabn");
-if(listabn==null){
-	out.println("<h1 class='header center white-text'>Não existem buracos negros registrados!</h1>");
-}else{
+	ArrayList<BuracosNegros> listabn = (ArrayList<BuracosNegros>) request.getSession().getAttribute("listabn");
+	if (listabn == null || listabn.isEmpty()) {
+		out.println("<h1 class='header center white-text'>Não existem buracos negros registrados!</h1>");
+	} else {
 %>
 <style>
 table, td, th {border:solid 1px #000; padding:5px;}
 td{width: 10%;}
 </style>
 <table class='header center white-text'>
-<tr class="green darken-4">
-<th>Nome</th>
-<th>Volume</th>
-<th>Posição</th>
-<th>Velocidade</th>
-<th>Editar</th>
-<th>Excluir</th>
-</tr>
+	<tr class="green darken-4">
+		
+		<th>Nome</th>
+		<th>Volume</th>
+		<th>Posição</th>
+		<th>Velocidade</th>
+		<th>Editar</th>
+		<th>Excluir</th>
+	</tr>
 <% 
-for(int i=0;i<listabn.size();i++){
-	out.println("<tr>");
-	out.println("<td>"+listabn.get(i).getNome()+"</td>");
-	out.println("<td>"+listabn.get(i).getVolume()+"</td>");
-	out.println("<td>"+listabn.get(i).getPosicao()+"</td>");
-	out.println("<td>"+listabn.get(i).getVelocidade()+"</td>");
-	out.println(
-			"<td> <a class='button blue darken-4' href='#'> <i class='blue darken-4 white-text material-icons left'>edit</i></a></td>");
-	out.println(
-			"<td> <a class='button red accent-4' href='#'> <i class='button red accent-4 white-text material-icons left'>delete</i></a></td>");
-	out.println("</tr>");
-
+	for (int i = 0; i < listabn.size(); i++) {%>
+		<tr>
+			
+			<td><%=listabn.get(i).getNome() %></td>
+			<td><%=listabn.get(i).getVolume() %></td>
+			<td><%=listabn.get(i).getPosicao() %></td>
+			<td><%=listabn.get(i).getVelocidade() %></td>
+	
+			<td>
+				<form method="post" action="index?action=EditarBN">					
+					<button value="<%=listabn.get(i).getId() %>" class="button blue darken-4" name="editar"  type="submit"> 
+						<i class='blue darken-4 white-text material-icons left'>edit</i>
+					</button>
+				</form>
+			</td>
+			<td>
+				<form method="post" action="index?action=ExcluirBN">
+					<input type="hidden" name="id" value="<%=listabn.get(i).getId() %>">
+					<button class="button red accent-4" value="<%=listabn.get(i).getId() %>" name="deletar" type="submit">
+						<i class='button red accent-4 white-text material-icons left'>delete</i>
+						
+					</button>
+				</form>
+			</td>
+		</tr>
+<%
+	}
 }
 %>
 </table>
-<%}%>
+
  <!-- Footer -->
  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <footer class="ftr page-footer blue-grey darken-4">

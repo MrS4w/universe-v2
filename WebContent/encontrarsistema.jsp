@@ -34,8 +34,6 @@ td {
 		<th>Posição</th>
 		<th>Dimensão</th>
 		<th>Constelação</th>
-		<th>Editar</th>
-		<th>Excluir</th>
 	</tr>
 	<%
 		out.println("<tr>");
@@ -43,17 +41,11 @@ td {
 		out.println("<td>"+sp.getPosicao()+"</td>");
 		out.println("<td>"+sp.getDimensao()+"</td>");
 		out.println("<td>"+sp.getConstelacao()+"</td>");
-		out.println(
-				"<td> <a class='button blue darken-4' href='#'> <i class='blue darken-4 white-text material-icons left'>edit</i></a></td>");
-		out.println(
-				"<td> <a class='button red accent-4' href='#'> <i class='button red accent-4 white-text material-icons left'>delete</i></a></td>");
 		out.println("</tr>");
-
-	}
-
-		
+}		
 	%>
 </table>
+
 <!-- Footer -->
 <br>
 <br>

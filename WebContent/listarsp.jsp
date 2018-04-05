@@ -12,8 +12,8 @@
           </div>
           </form>
 	<% 
-ArrayList<SistemasPlanetarios> listasp =(ArrayList<SistemasPlanetarios>) request.getSession().getAttribute("listasp");
-if(listasp==null){
+ArrayList<SistemasPlanetarios> listas =(ArrayList<SistemasPlanetarios>) request.getSession().getAttribute("listasp");
+if(listas==null || listas.isEmpty()){
 	out.println("<h1 class='header center white-text'>Não existem sistemas registrados!</h1>");
 }else{
 %>
@@ -31,22 +31,37 @@ td{width: 10%;}
 <th>Excluir</th>
 </tr>
 <% 
-for(int i=0;i<listasp.size();i++){
+for(int i=0;i<listas.size();i++){
 	out.println("<tr>");
-	out.println("<td>"+listasp.get(i).getNome()+"</td>");
-	out.println("<td>"+listasp.get(i).getPosicao()+"</td>");
-	out.println("<td>"+listasp.get(i).getDimensao()+"</td>");
-	out.println("<td>"+listasp.get(i).getConstelacao()+"</td>");
-	out.println(
-			"<td> <a class='button blue darken-4' href='#'> <i class='blue darken-4 white-text material-icons left'>edit</i></a></td>");
-	out.println(
-			"<td> <a class='button red accent-4' href='#'> <i class='button red accent-4 white-text material-icons left'>delete</i></a></td>");
-	out.println("</tr>");
-
-}
-%>
+	out.println("<td>"+listas.get(i).getNome()+"</td>");
+	out.println("<td>"+listas.get(i).getPosicao()+"</td>");
+	out.println("<td>"+listas.get(i).getDimensao()+"</td>");
+	out.println("<td>"+listas.get(i).getConstelacao()+"</td>");
+	%>
+	<td>
+					<form method="post" action="index?action=EditarSP">					
+						<button value="<%=listas.get(i).getId() %>" class="button blue darken-4" name="editar"  type="submit"> 
+							<i class='blue darken-4 white-text material-icons left'>edit</i>
+						</button>
+					</form>
+				</td>
+				<td>
+				<form method="post" action="index?action=ExcluirSistema">
+					<input type="hidden" name="id" value="<%=listas.get(i).getId() %>">
+					<button class="button red accent-4" value="<%=listas.get(i).getId() %>" name="deletar" type="submit">
+						<i class='button red accent-4 white-text material-icons left'>delete</i>
+						
+					</button>
+				</form>
+			</td>
+		</tr>
+	<% }
+	%>
 </table>
 <%}%>
+
+
+
  <!-- Footer -->
  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <footer class="ftr page-footer blue-grey darken-4">

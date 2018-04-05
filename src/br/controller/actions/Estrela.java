@@ -31,15 +31,20 @@ public class Estrela implements Action {
 		request.setAttribute("volume", estrela.getVolume());
 		request.setAttribute("posicao", estrela.getPosicao());
 		request.setAttribute("visivel", estrela.isVisivel());
+		request.setAttribute("id", estrela.getId());
 		
 		ArrayList<Estrelas> lista = (ArrayList<Estrelas>) request.getSession().getAttribute("lista");
 		
 		if (lista == null) {
 			lista = new ArrayList<Estrelas>();
+			estrela.setId(lista.size()+1);
 			lista.add(estrela);
+			request.getSession().setAttribute("obj", estrela);
 			request.getSession().setAttribute("lista", lista);
 		} else {
+			estrela.setId(lista.size()+1);
 			lista.add(estrela);
+			request.getSession().setAttribute("obj", estrela);
 			request.getSession().setAttribute("lista", lista);
 		}
 

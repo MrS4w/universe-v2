@@ -1,6 +1,14 @@
 package br.model;
 
 public abstract class Estrela {
+	protected int id;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	protected String nome;
 	protected double volume;

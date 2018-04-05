@@ -1,7 +1,15 @@
 package br.model;
 
 public abstract class Galaxia {
-	
+	protected int id;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	protected String nome;
 	protected String posicao;
 	protected double dimensao;

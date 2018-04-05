@@ -10,4 +10,5 @@ public class Estrelas extends Estrela {
 	public void setVisivel(boolean visivel) {
 		this.visivel = visivel;
 	}
+
 }

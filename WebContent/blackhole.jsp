@@ -8,7 +8,7 @@
         Nome:<input type="text" name="nome" id="nome" required>
         Volume:<input type="number" name="volume" id="volume" min="0" required>
         Posição:<input type="text" name="posicao" id="posicao" required>
-        Velocidade/Rotação:<input type="number" name="vel" id="vel" min="0" required>
+        Velocidade/Rotação:<input type="number" name="velocidade" id="velocidade" min="0" required>
         <input type="submit" name="botao" class="blue-grey darken-4 waves-effect waves-light btn" value="Enviar">
       </form>
     </div>

@@ -27,14 +27,17 @@ public class Galaxia implements Action {
 		request.setAttribute("pos", galaxia.getPosicao());
 		request.setAttribute("dimensao", galaxia.getDimensao());
 		request.setAttribute("quantidade", galaxia.getQuantidade());
+		request.setAttribute("id", galaxia.getId());
 		
 ArrayList<Galaxias> listagal = (ArrayList<Galaxias>) request.getSession().getAttribute("listagal");
 		
 		if (listagal == null) {
 			listagal = new ArrayList<Galaxias>();
+			galaxia.setId(listagal.size()+1);
 			listagal.add(galaxia);
 			request.getSession().setAttribute("listagal", listagal);
 		} else {
+			galaxia.setId(listagal.size()+1);
 			listagal.add(galaxia);
 			request.getSession().setAttribute("listagal", listagal);
 		}

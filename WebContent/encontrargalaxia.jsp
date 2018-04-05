@@ -13,7 +13,7 @@
 <h7>Clique no botão abaixo para voltar para a listagem:</h7><br>
 	<a type="button" href="index?action=ListarGalaxia" class="blue-grey darken-4 waves-effect waves-light btn"><i class="large material-icons">arrow_back</i></a>	
 </div>
-<%}else {
+<%}else{
 	out.println("<h3 class='white-text'>Galáxia encontrada:</h3>");
 %>
 
@@ -34,8 +34,7 @@ td {
 		<th>Posição</th>
 		<th>Dimensão</th>
 		<th>Quantidade de sistemas planetários</th>
-		<th>Editar</th>
-		<th>Excluir</th>
+
 	</tr>
 	<%
 		out.println("<tr>");
@@ -43,17 +42,13 @@ td {
 		out.println("<td>"+g.getPosicao()+"</td>");
 		out.println("<td>"+g.getDimensao()+"</td>");
 		out.println("<td>"+g.getQuantidade()+"</td>");
-		out.println(
-				"<td> <a class='button blue darken-4' href='#'> <i class='blue darken-4 white-text material-icons left'>edit</i></a></td>");
-		out.println(
-				"<td> <a class='button red accent-4' href='#'> <i class='button red accent-4 white-text material-icons left'>delete</i></a></td>");
-		out.println("</tr>");
 
 	}
 
 		
 	%>
 </table>
+
 <!-- Footer -->
 <br>
 <br>
