@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<meta charset="utf-8" />
+	<title>Universe</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="stars.js"></script>
+</h:head>
+
+<h:body class="stars bd">
+	<h:panelGrid columns="2" cellpadding="10">
+	
+	</h:panelGrid>
+	<div class="ui-g">
+		<p:panel id="basic" header="Universe 2.0" footer="2018 &copy; Victor Antonio and Patrick Brass" style="margin-bottom:20px;background-color:transparent">
+		<h1 style="color:white">Insert items:</h1>
+		<p:tabView>
+			<ui:insert name="istar" />
+			<ui:insert name="ibh" />
+			<ui:insert name="igalaxy" />
+			<ui:insert name="isystem" />
+		</p:tabView>
+		<h1 style="color:white">List items:</h1>
+		<p:tabView>
+			<ui:insert name="lstar" />
+			<ui:insert name="lbh" />
+			<ui:insert name="lgalaxy" />
+			<ui:insert name="lsystem" />
+		</p:tabView>
+		</p:panel>
+	</div>
+</h:body>
+</html>
