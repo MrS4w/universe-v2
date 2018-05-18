@@ -18,7 +18,7 @@
     this.defaultOptions = {
       velocity: 3,
       starSize: 8,
-      life: 100,
+      life: 300,
       beamSize: 400,
       dir: -1
     };
@@ -115,7 +115,7 @@
 
   ShootingStar.prototype.launch = function(everyTime) {
     if (this.toType(everyTime) != "number") {
-      everyTime = 2;
+      everyTime = 5;
     }
     everyTime = everyTime * 1000;
     this.launchStar();
