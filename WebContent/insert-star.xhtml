@@ -7,11 +7,11 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="starsForm.xhtml">
 	<ui:define name="star">
 		<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-			<p:outputLabel for="visibility" value="Visibility:" />
-			<p:selectOneRadio id="visibility" value="#{radioView.console}">
-				<f:selectItem itemLabel="Visible" itemValue="1" />
-				<f:selectItem itemLabel="Not visible" itemValue="0" />
-			</p:selectOneRadio>
-		</h:panelGrid>
+						<p:outputLabel for="visibility" value="Visibility:" />
+						<p:selectOneRadio id="visibility" value="#{cadastroStarMB.star.visible}">
+							<f:selectItem itemLabel="Visible" itemValue="1" />
+							<f:selectItem itemLabel="Not visible" itemValue="0" />
+						</p:selectOneRadio>
+					</h:panelGrid>
 	</ui:define>
 </ui:decorate>

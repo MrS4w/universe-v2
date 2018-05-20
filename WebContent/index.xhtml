@@ -9,26 +9,27 @@
 	<ui:define name="istar">
 		<p:tab title="Star">
 			<h:panelGrid columns="2" cellpadding="10">
-				<h:form>
+				<form method="post" >
 		Name:<br />
-					<p:inputText />
+					<p:inputText id="starName" value="#{star.name}" />
 					<br />
 					<br />
 		Volume: <br />
-					<p:inputNumber id="input1" value="#{inputNumberView.input1}" />
+					<p:inputNumber id="starVolume" value="#{star.volume}" />
 					<br />
 					<br />
 		Position: <br />
-					<p:inputText />
+					<p:inputText id="starPosition" value="#{star.position}" />
+					
 					<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
 						<p:outputLabel for="visibility" value="Visibility:" />
-						<p:selectOneRadio id="visibility" value="#{radioView.console}">
+						<p:selectOneRadio id="visibility" value="#{star.visible}">
 							<f:selectItem itemLabel="Visible" itemValue="1" />
 							<f:selectItem itemLabel="Not visible" itemValue="0" />
 						</p:selectOneRadio>
 					</h:panelGrid>
-					<p:commandButton actionListener="#{estrela.save}" value="Send" />
-				</h:form>
+					<p:commandButton actionListener="#{star.salvar}" value="Send" />
+				</form>
 			</h:panelGrid>
 		</p:tab>
 	</ui:define>
@@ -54,7 +55,7 @@
 					<p:inputNumber id="velocity" value="#{inputNumberView.input1}" />
 					<br />
 					<br />
-					<p:commandButton actionListener="#{estrela.save}" value="Send" />
+					<p:commandButton actionListener=" " value="Send" />
 				</h:form>
 			</h:panelGrid>
 		</p:tab>
@@ -81,7 +82,7 @@
 					<p:inputNumber id="input1" value="#{inputNumberView.input1}" />
 					<br />
 					<br />
-					<p:commandButton actionListener="#{estrela.save}" value="Send" />
+					<p:commandButton actionListener=" " value="Send" />
 				</h:form>
 			</h:panelGrid>
 		</p:tab>
@@ -108,7 +109,7 @@
 					<p:inputText />
 					<br />
 					<br />
-					<p:commandButton actionListener="#{estrela.save}" value="Send" />
+					<p:commandButton actionListener=" " value="Send" />
 				</h:form>
 			</h:panelGrid>
 		</p:tab>
@@ -118,7 +119,7 @@
 	<ui:define name="lstar">
 		<p:tab title="List of stars">
 			<h:panelGrid columns="2" cellpadding="10">
-				<p:commandButton actionListener="#{estrela.save}" value="Go to list" />
+				<p:commandButton actionListener=" " value="Go to list" />
 
 			</h:panelGrid>
 		</p:tab>
@@ -128,7 +129,7 @@
 		<p:tab title="List of blackholes">
 			<h:panelGrid columns="2" cellpadding="10">
 
-				<p:commandButton actionListener="#{estrela.save}" value="Go to list" />
+				<p:commandButton actionListener=" " value="Go to list" />
 			</h:panelGrid>
 		</p:tab>
 	</ui:define>
@@ -136,7 +137,7 @@
 	<ui:define name="lgalaxy">
 		<p:tab title="List of galaxies">
 			<h:panelGrid columns="2" cellpadding="10">
-				<p:commandButton actionListener="#{estrela.save}" value="Go to list" />
+				<p:commandButton actionListener=" " value="Go to list" />
 			</h:panelGrid>
 		</p:tab>
 	</ui:define>
@@ -144,7 +145,7 @@
 	<ui:define name="lsystem">
 		<p:tab title="List of systems">
 			<h:panelGrid columns="2" cellpadding="10">
-				<p:commandButton actionListener="#{estrela.save}" value="Go to list" />
+				<p:commandButton actionListener=" " value="Go to list" />
 			</h:panelGrid>
 		</p:tab>
 	</ui:define>

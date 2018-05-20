@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+    <title>List</title>
+    </h:head>
+    <h:body>
+			<h:form>
+            	<div class="box box-primary">
+                	<div class="box-header with-border">
+                    	<p:commandButton action="cadastro-star?faces-redirect=true" ajax="false" icon="fa fa-plus"
+                         	            value="Novo" styleClass="btn-primary"/>
+                    	<p:spacer width="5"/>
+	                    <p:dataTable id="starTable" widgetVar="starTable" rows="10"
+	                    			 value="#{listaStarMB.stars}" var="star" rowKey="#{star.id}"
+	                                 paginator="true" 	                                 
+	                                 paginatorPosition="bottom"	                                 
+	                                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} "
+	                                 currentPageReportTemplate=""
+	                                 rowsPerPageTemplate="5,10,15,20,30">
+	                        <p:column selectionMode="multiple" width="5%" styleClass="align-center"/>
+	                        
+	                        <p:column headerText="Name"
+	                        		  filterBy="#{star.name}"
+	                        		  sortBy="#{star.name}" filterMatchMode="contains">
+	                        	<h:link value="#{star.name}" outcome="index.xhtml">
+	                        		<f:param name="id" value="#{star.id}"/>	                        	
+	                        	</h:link>	                        
+	                        </p:column>	 
+	                        <p:column headerText="Volume"
+	                        	      filterBy="#{star.volume}"
+	                        		  sortBy="#{star.volume}" filterMatchMode="contains">
+	                        	<h:outputLabel value="#{star.volume}" />
+	                        </p:column>
+	                       	<p:column headerText="Position"
+	                        	      filterBy="#{star.position}"
+	                        		  sortBy="#{star.position}" filterMatchMode="contains">
+	                        	<h:outputLabel value="#{star.position}" />
+	                        </p:column>
+	                        <p:column headerText="Visibility"
+	                        	      filterBy="#{star.visible}"
+	                        		  sortBy="#{star.visible}" filterMatchMode="contains">
+	                        	<h:outputLabel value="#{star.visible}" />
+	                        </p:column>	                                               
+	                    </p:dataTable>
+					</div>
+	            </div>
+        	</h:form>
+    </h:body>
+</html>

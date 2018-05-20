@@ -5,15 +5,22 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="base.xhtml">
-	<ui:define name="content">
+	<ui:define name="inserir">
 		<h:form>
-		Name: <p:inputText />
-			<br /><br />
-		Volume: <p:inputNumber id="input1" value="#{inputNumberView.input1}" />
-			<br /><br />
-		Position: <p:inputText />
-			<ui:insert name="star" />
-			<p:commandButton actionListener="#{estrela.save}" value="Send" />
+		Name:<br />
+					<p:inputText id="starName" value="#{cadastroStarMB.star.name}" />
+					<br />
+					<br />
+		Volume: <br />
+					<p:inputNumber id="starVolume" value="#{cadastroStarMB.star.volume}" />
+					<br />
+					<br />
+		Position: <br />
+					<p:inputText id="starPosition" value="#{cadastroStarMB.star.position}" />
+					
+					
+					<p:commandButton actionListener="#{cadastroStarMB.star.salvar}" value="Send" />
+					<ui:insert name="star" />
 		</h:form>
 	</ui:define>
 </ui:decorate>

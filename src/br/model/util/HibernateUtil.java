@@ -1,21 +1,29 @@
 package br.model.util;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Disposes;
+import javax.enterprise.inject.Produces;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
+
+@ApplicationScoped
 public class HibernateUtil {
-	private static final SessionFactory sessionFactory = buildSessionFactory();
+	private EntityManagerFactory factory;
 
-	private static SessionFactory buildSessionFactory() {
-		try {
-			return new Configuration().configure().buildSessionFactory();
-		} catch (Throwable ex) {
-			System.err.println("Initial SessionFactory creation failed." + ex);
-			throw new ExceptionInInitializerError(ex);
-		}
+	public HibernateUtil() {
+		this.factory = Persistence.createEntityManagerFactory("crudPU");
 	}
 
-	public static SessionFactory getSessionFactory() {
-		return sessionFactory;
+	@Produces
+	@RequestScoped
+	public EntityManager createEntityManager() {
+		return this.factory.createEntityManager();
+	}
+
+	public void cloceEntityManager(@Disposes EntityManager manager) {
+		manager.close();
 	}
 }
