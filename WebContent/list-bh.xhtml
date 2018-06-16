@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="base.xhtml">
+	<ui:define name="inserir">
+		<h:head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="description" content="" />
+			<meta name="author" content="" />
+			<link
+				href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+				rel="stylesheet" type="text/css" />
+			<script type="text/javascript"
+				src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"
+				xml:space="preserve"></script>
+			<script type="text/javascript"
+				src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+				xml:space="preserve"></script>
+		</h:head>
+		<h:body class="">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-md-12">
+						<a href="att-bh.xhtml"><button>Insert more</button></a>
+						<h2>
+							List and search <br />&nbsp; <br />
+						</h2>
+						<h:form class="form-horizontal" action="">
+							<fieldset>
+								<!--  Form Name -->
+								<!--  Button Drop Down -->
+								<div class="control-group">
+									<label class="control-label" for="pesquisa">Name:</label>
+									<div class="controls">
+										<div class="input-append">
+											<input id="pesquisa" name="pesquisa" class="input-xlarge"
+												type="text" />
+										</div>
+									</div>
+								</div>
+								<!--  Button -->
+								<div class="control-group">
+									<label class="control-label" for="pesquisa_adin"></label>
+									<div class="controls">
+										<button id="pesquisa_adin" name="pesquisa_adin"
+											class="btn btn-warning">Search</button>
+									</div>
+									<h:dataTable value="#{bh.listaBHs}" var="bhs" border="5">
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="---ID---" />
+											</f:facet>
+											<h:outputText value="#{bhs.id}" />
+										</h:column>
+
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="---Name---" />
+											</f:facet>
+											<h:outputText value="#{bhs.name}" />
+										</h:column>
+
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="---Volume---" />
+											</f:facet>
+											<h:outputText value="#{bhs.volume}" />
+										</h:column>
+
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="---Position---" />
+											</f:facet>
+											<h:outputText value="#{bhs.position}" />
+										</h:column>
+
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="-Velocity-" />
+											</f:facet>
+											<h:outputText value="#{bhs.velocity}" />
+										</h:column>
+										
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="--Action--" />
+											</f:facet>
+											<h:commandLink action="#{bh.edit(bhs)}" value="Edit" />
+										<h:outputText value="    /    " />
+										<h:commandLink action="#{bh.delete(bhs)}" value="Delete" />
+										</h:column>
+									</h:dataTable>
+								</div>
+							</fieldset>
+						</h:form>
+						<p></p>
+					</div>
+					<h2></h2>
+				</div>
+			</div>
+		</h:body>
+	</ui:define>
+</ui:decorate>

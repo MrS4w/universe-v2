@@ -1,153 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:decorate xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="base.xhtml">
-	<!-- Star -->
-	<ui:define name="istar">
-		<p:tab title="Star">
-			<h:panelGrid columns="2" cellpadding="10">
-				<form method="post" >
-		Name:<br />
-					<p:inputText id="starName" value="#{star.name}" />
-					<br />
-					<br />
-		Volume: <br />
-					<p:inputNumber id="starVolume" value="#{star.volume}" />
-					<br />
-					<br />
-		Position: <br />
-					<p:inputText id="starPosition" value="#{star.position}" />
-					
-					<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-						<p:outputLabel for="visibility" value="Visibility:" />
-						<p:selectOneRadio id="visibility" value="#{star.visible}">
-							<f:selectItem itemLabel="Visible" itemValue="1" />
-							<f:selectItem itemLabel="Not visible" itemValue="0" />
-						</p:selectOneRadio>
-					</h:panelGrid>
-					<p:commandButton actionListener="#{star.salvar}" value="Send" />
-				</form>
-			</h:panelGrid>
-		</p:tab>
+	<ui:define name="inserir">
+	<a href="att-star.xhtml"><button>Star</button></a> 
+	<br /><br />
+	<a href="att-bh.xhtml"><button>BlackHole</button></a> 
+	<br /><br />
+	<a href="att-g.xhtml"><button>Galaxy</button></a> 
+	<br /><br />
+	<a href="att-s.xhtml"><button>System</button></a> 
+	<br /><br />
 	</ui:define>
-
-	<!-- Blackhole insertion -->
-	<ui:define name="ibh">
-		<p:tab title="Blackhole">
-			<h:panelGrid columns="2" cellpadding="10">
-				<h:form>
-		Name: <br />
-					<p:inputText />
-					<br />
-					<br />
-		Volume:<br />
-					<p:inputNumber id="input1" value="#{inputNumberView.input1}" />
-					<br />
-					<br />
-		Position:<br />
-					<p:inputText />
-					<br />
-					<br />
-		Velocity:<br />
-					<p:inputNumber id="velocity" value="#{inputNumberView.input1}" />
-					<br />
-					<br />
-					<p:commandButton actionListener=" " value="Send" />
-				</h:form>
-			</h:panelGrid>
-		</p:tab>
-	</ui:define>
-
-	<!-- Galaxy insertion -->
-	<ui:define name="igalaxy">
-		<p:tab title="Galaxy">
-			<h:panelGrid columns="2" cellpadding="10">
-				<h:form>
-				Name:<br />
-					<p:inputText />
-					<br />
-					<br />
-					Position:<br />
-					<p:inputText />
-					<br />
-					<br />
-					Dimension:<br />
-					<p:inputText />
-					<br />
-					<br />
-					Quantity of planetary systems:<br />
-					<p:inputNumber id="input1" value="#{inputNumberView.input1}" />
-					<br />
-					<br />
-					<p:commandButton actionListener=" " value="Send" />
-				</h:form>
-			</h:panelGrid>
-		</p:tab>
-	</ui:define>
-
-	<!-- System insertion -->
-	<ui:define name="isystem">
-		<p:tab title="Planetary System">
-			<h:panelGrid columns="2" cellpadding="10">
-				<h:form>
-				Name:<br />
-					<p:inputText />
-					<br />
-					<br />
-					Position:<br />
-					<p:inputText />
-					<br />
-					<br />
-					Dimension:<br />
-					<p:inputText />
-					<br />
-					<br />
-					Constelation:<br />
-					<p:inputText />
-					<br />
-					<br />
-					<p:commandButton actionListener=" " value="Send" />
-				</h:form>
-			</h:panelGrid>
-		</p:tab>
-	</ui:define>
-
-	<!-- ******************************************************************************* -->
-	<ui:define name="lstar">
-		<p:tab title="List of stars">
-			<h:panelGrid columns="2" cellpadding="10">
-				<p:commandButton actionListener=" " value="Go to list" />
-
-			</h:panelGrid>
-		</p:tab>
-	</ui:define>
-
-	<ui:define name="lbh">
-		<p:tab title="List of blackholes">
-			<h:panelGrid columns="2" cellpadding="10">
-
-				<p:commandButton actionListener=" " value="Go to list" />
-			</h:panelGrid>
-		</p:tab>
-	</ui:define>
-
-	<ui:define name="lgalaxy">
-		<p:tab title="List of galaxies">
-			<h:panelGrid columns="2" cellpadding="10">
-				<p:commandButton actionListener=" " value="Go to list" />
-			</h:panelGrid>
-		</p:tab>
-	</ui:define>
-
-	<ui:define name="lsystem">
-		<p:tab title="List of systems">
-			<h:panelGrid columns="2" cellpadding="10">
-				<p:commandButton actionListener=" " value="Go to list" />
-			</h:panelGrid>
-		</p:tab>
-	</ui:define>
-
-</ui:decorate>
+	</ui:decorate>

@@ -1,54 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <h:head>
-    <title>List</title>
-    </h:head>
-    <h:body>
-			<h:form>
-            	<div class="box box-primary">
-                	<div class="box-header with-border">
-                    	<p:commandButton action="cadastro-star?faces-redirect=true" ajax="false" icon="fa fa-plus"
-                         	            value="Novo" styleClass="btn-primary"/>
-                    	<p:spacer width="5"/>
-	                    <p:dataTable id="starTable" widgetVar="starTable" rows="10"
-	                    			 value="#{listaStarMB.stars}" var="star" rowKey="#{star.id}"
-	                                 paginator="true" 	                                 
-	                                 paginatorPosition="bottom"	                                 
-	                                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} "
-	                                 currentPageReportTemplate=""
-	                                 rowsPerPageTemplate="5,10,15,20,30">
-	                        <p:column selectionMode="multiple" width="5%" styleClass="align-center"/>
-	                        
-	                        <p:column headerText="Name"
-	                        		  filterBy="#{star.name}"
-	                        		  sortBy="#{star.name}" filterMatchMode="contains">
-	                        	<h:link value="#{star.name}" outcome="index.xhtml">
-	                        		<f:param name="id" value="#{star.id}"/>	                        	
-	                        	</h:link>	                        
-	                        </p:column>	 
-	                        <p:column headerText="Volume"
-	                        	      filterBy="#{star.volume}"
-	                        		  sortBy="#{star.volume}" filterMatchMode="contains">
-	                        	<h:outputLabel value="#{star.volume}" />
-	                        </p:column>
-	                       	<p:column headerText="Position"
-	                        	      filterBy="#{star.position}"
-	                        		  sortBy="#{star.position}" filterMatchMode="contains">
-	                        	<h:outputLabel value="#{star.position}" />
-	                        </p:column>
-	                        <p:column headerText="Visibility"
-	                        	      filterBy="#{star.visible}"
-	                        		  sortBy="#{star.visible}" filterMatchMode="contains">
-	                        	<h:outputLabel value="#{star.visible}" />
-	                        </p:column>	                                               
-	                    </p:dataTable>
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="base.xhtml">
+	<ui:define name="inserir">
+		<h:head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="description" content="" />
+			<meta name="author" content="" />
+			<link
+				href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+				rel="stylesheet" type="text/css" />
+			<script type="text/javascript"
+				src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"
+				xml:space="preserve"></script>
+			<script type="text/javascript"
+				src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+				xml:space="preserve"></script>
+		</h:head>
+		<h:body class="">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-md-12">
+						<a href="att-star.xhtml"><button>Insert more</button></a>
+						<h2>
+							List and search <br />&nbsp; <br />
+						</h2>
+						<h:form class="form-horizontal" action="">
+							<fieldset>
+								<!--  Form Name -->
+								<!--  Button Drop Down -->
+								<div class="control-group">
+									<label class="control-label" for="pesquisa">Name:</label>
+									<div class="controls">
+										<div class="input-append">
+											<input id="pesquisa" name="pesquisa" class="input-xlarge"
+												type="text" />
+										</div>
+									</div>
+								</div>
+								<!--  Button -->
+								<div class="control-group">
+									<label class="control-label" for="pesquisa_adin"></label>
+									<div class="controls">
+										<button id="pesquisa_adin" name="pesquisa_adin"
+											class="btn btn-warning">Search</button>
+									</div>
+									<h:dataTable value="#{star.listaStars}" var="stars" border="5">
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="---ID---" />
+											</f:facet>
+											<h:outputText value="#{stars.id}" />
+										</h:column>
+
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="---Name---" />
+											</f:facet>
+											<h:outputText value="#{stars.name}" />
+										</h:column>
+
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="---Volume---" />
+											</f:facet>
+											<h:outputText value="#{stars.volume}" />
+										</h:column>
+
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="---Position---" />
+											</f:facet>
+											<h:outputText value="#{stars.position}" />
+										</h:column>
+
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="Is visible?" />
+											</f:facet>
+											<h:outputText value="#{stars.visible}" />
+										</h:column>
+										
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="--Action--" />
+											</f:facet>
+											<h:commandLink action="#{star.edit(stars)}" value="Edit" />
+										<h:outputText value="    /    " />
+										<h:commandLink action="#{star.delete(stars)}" value="Delete" />
+										</h:column>
+									</h:dataTable>
+								</div>
+							</fieldset>
+						</h:form>
+						<p></p>
 					</div>
-	            </div>
-        	</h:form>
-    </h:body>
-</html>
+					<h2></h2>
+				</div>
+			</div>
+		</h:body>
+	</ui:define>
+</ui:decorate>
