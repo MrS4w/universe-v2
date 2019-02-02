@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="base.xhtml">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+ xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="base.xhtml">
 	<ui:define name="inserir">
 		<h:head>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<meta name="description" content="" />
 			<meta name="author" content="" />
-			<link
-				href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
-				rel="stylesheet" type="text/css" />
-			<script type="text/javascript"
-				src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"
-				xml:space="preserve"></script>
-			<script type="text/javascript"
-				src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
-				xml:space="preserve"></script>
+			<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+			<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" xml:space="preserve"></script>
+			<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" xml:space="preserve"></script>
 		</h:head>
 		<h:body class="">
 			<div class="container">
@@ -37,8 +28,7 @@
 									<label class="control-label" for="pesquisa">Name:</label>
 									<div class="controls">
 										<div class="input-append">
-											<input id="pesquisa" name="pesquisa" class="input-xlarge"
-												type="text" />
+											<input id="pesquisa" name="pesquisa" class="input-xlarge" type="text" />
 										</div>
 									</div>
 								</div>
@@ -46,8 +36,7 @@
 								<div class="control-group">
 									<label class="control-label" for="pesquisa_adin"></label>
 									<div class="controls">
-										<button id="pesquisa_adin" name="pesquisa_adin"
-											class="btn btn-warning">Search</button>
+										<button id="pesquisa_adin" name="pesquisa_adin" class="btn btn-warning">Search</button>
 									</div>
 									<h:dataTable value="#{star.listaStars}" var="stars" border="5">
 										<h:column>
@@ -84,14 +73,14 @@
 											</f:facet>
 											<h:outputText value="#{stars.visible}" />
 										</h:column>
-										
+
 										<h:column>
 											<f:facet name="header">
 												<h:outputText value="--Action--" />
 											</f:facet>
 											<h:commandLink action="#{star.edit(stars)}" value="Edit" />
-										<h:outputText value="    /    " />
-										<h:commandLink action="#{star.delete(stars)}" value="Delete" />
+											<h:outputText value="    /    " />
+											<h:commandLink action="#{star.delete(stars)}" value="Delete" />
 										</h:column>
 									</h:dataTable>
 								</div>

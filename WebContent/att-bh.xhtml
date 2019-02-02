@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="base.xhtml">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+ xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="base.xhtml">
 	<ui:define name="inserir">
-	
-	<a href="list-bh.xhtml"><button>List</button></a>
-			<h:form>
+
+		<a href="list-bh.xhtml"><button>List</button></a>
+		<h:form>
 			<h:inputHidden value="#{bh.bh.id}" />
-		  Name:<br />
+			Name:<br />
 			<p:inputText id="bhName" value="#{bh.bh.name}" />
 			<br /><br />
-		Volume: <br />
+			Volume: <br />
 			<p:inputText id="bhVolume" value="#{bh.bh.volume}" />
 			<br /><br />
-		Position: <br />
-			<p:inputText id="bhPosition"
-				value="#{bh.bh.position}" />
-				<br /><br />
-		Velocity: <br />
+			Position: <br />
+			<p:inputText id="bhPosition" value="#{bh.bh.position}" />
+			<br /><br />
+			Velocity: <br />
 			<p:inputText id="bhVel" value="#{bh.bh.velocity}" />
-			
+
 			<p:commandButton action="#{bh.create}" value="Send" />
 		</h:form>
 

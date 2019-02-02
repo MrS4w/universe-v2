@@ -6,7 +6,7 @@
 .stars {
 	z-index: 0;
 	position: relative;
-	background-image: url(   http://www.14denoviembre.es/img/hori.png ),
+	background-image: url(http://www.14denoviembre.es/img/hori.png ),
 		url( http://www.14denoviembre.es/img/stars_5.png );
 	background-repeat: non-repeat-x, non-repeat-x non-repeat-y;
 	transform: translate3D(0em, 0em, 0);
